@@ -1,7 +1,128 @@
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+            font-family: "Source Han Sans CN Light", "Source Han Sans SC Light",
+                "Source Han Sans Light", -apple-system, BlinkMacSystemFont,
+                "Segoe UI Light", Roboto, sans-serif;
+            color: #333;
+        }
+
+        body.dark {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .moon {
+            display: none;
+            fill: #fff;
+        }
+
+        .sun {
+            fill: #000;
+            display: block;
+        }
+
+        body.dark .moon {
+            display: block;
+        }
+
+        body.dark .sun {
+            display: none;
+        }
+
+        .themeToggleBtn {
+            border: none;
+            position: fixed;
+            top: 50px;
+            right: 150px;
+            cursor: pointer;
+            background: transparent;
+            z-index: 999;
+        }
+
+        .themeToggleBtn svg {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s ease, fill 0.2s ease;
+            overflow: visible;
+        }
+
+        .themeToggleBtn:hover svg {
+            transform: scale(1.2);
+        }
+
+        #main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 20vh;
+        }
+
+        #avatar {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        #avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .title {
+            letter-spacing: 2px;
+            font-size: 22px;
+            font-weight: 350;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-links div {
+            display: inline-block;
+        }
+
+        .github-icon {
+            color: #333;
+        }
+
+        body.dark .github-icon {
+            color: #ccc;
+        }
+
+        .mail-icon {
+            color: #43a4d1;
+        }
+
+        body.dark .mail-icon {
+            color: #64b5f6; 
+        }
+
+        .icon {
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .social-links a:hover .icon {
+            transform: scale(1.1);
+        }
